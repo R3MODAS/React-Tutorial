@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Hello from "./components/Hello";
+import Greet from "./components/Greet";
+import Welcome from "./components/Welcome";
+import Navbar from "./components/Navbar";
+import Message from "./components/Message";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+    <BrowserRouter>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Hello />}/>
+
+          <Route path="/greet" element={
+            <>
+              <Greet name="Remo">
+                <div style={{ color: "aqua" }}>This is a children 1</div>
+              </Greet>
+              <Greet name="Harsh">
+                <div style={{ color: "red" }}>This is a children 2</div>
+              </Greet>
+              <Greet name="Rahul" />
+            </>} />
+
+          <Route path="/welcome" element={
+            <>
+              <Welcome name="Remo">
+                <div style={{ color: "aqua" }}>This is a children 1</div>
+              </Welcome>
+              <Welcome name="Harsh">
+                <div style={{ color: "red" }}>This is children 2</div>
+              </Welcome>
+              <Welcome name="Rahul" />
+            </>
+          } />
+
+          <Route path="/message" element={<Message />} />
+        </Routes>
+    </BrowserRouter>
+      </>
   );
 }
 
