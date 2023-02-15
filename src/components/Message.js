@@ -8,6 +8,7 @@ class Message extends Component {
      // state can influence what is rendered in the browser
      // state can be changed within the component
      // setState method is used to set the state in a class component
+     
      constructor() {
           super()
           this.state = {
