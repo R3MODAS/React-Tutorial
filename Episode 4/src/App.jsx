@@ -7,8 +7,15 @@ function App() {
   return (
     <>
       <div className="App">
-        <button onClick={() => setShowText(!ShowText)}>Show Text</button>
+        <button 
+        onClick={
+          () => 
+          setShowText(!ShowText)
+        }>
+          Show Text</button>
+
         {ShowText && <Text />}
+        
       </div>
     </>
   )
