@@ -28,6 +28,7 @@ function Home() {
         }
         else {
             setTodoList([...TodoList, task]);
+            setTask("");
         }
     }
 
@@ -74,11 +75,11 @@ function Home() {
 
             <ul className='list'>
                 <h2 style={{ textDecoration: "underline" }}>Tasks</h2>
-                {TodoList.map((item, key) => {
+                {TodoList.map((item) => {
                     return (
                         <>
                         {/* Iterating the Items of the TodoList */}
-                            <li key={key} style={{ color: item.completed ? "#7aeb34" : "white", textDecoration: item.completed ? "line-through" : "none" }} >{item.task}</li>
+                            <li key={item.id} style={{ color: item.completed ? "#7aeb34" : "white", textDecoration: item.completed ? "line-through" : "none" }} >{item.task}</li>
                             <div className='buttons'>
                                 {/* Deleting the Task */}
                                 <button onClick={() => deleteTask(item.id)}><i className="fa-regular fa-circle-xmark"></i></button>
