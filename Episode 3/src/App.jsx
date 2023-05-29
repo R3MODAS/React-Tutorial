@@ -38,7 +38,9 @@ function App() {
 
   // Deletes the Task
   const handleDelete = (id) => {
-    setTodoList(TodoList.filter((task) => task.id !== id));
+    const deleted = TodoList.filter((task) => task.id !== id);
+    setTodoList(deleted);
+    localStorage.setItem("todo",JSON.stringify(deleted));
   }
 
   // Marks if one Task is Done
