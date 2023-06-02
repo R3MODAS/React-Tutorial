@@ -27,16 +27,6 @@ body{
   min-height: 100vh;
 }
 
-.wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  height: 100vh;
-  flex-flow: wrap column;
-  padding: 30px;
-}
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -84,11 +74,26 @@ button:focus-visible {
   }
 }
 
-.Home{
-  margin-top: 30px;
+form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
+}
+
+input{
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fff;
+  background-color: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label{
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
 }
